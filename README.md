@@ -19,9 +19,20 @@ PS: 移步最新[**albert fine-tune ner**](https://github.com/ProHiryu/albert-ch
 
 使用BIO数据标注模式，使用人民日报经典数据
 
-train：
+### 目录描述:
+```
+|____ bert                              # need git from [here](https://github.com/google-research/bert)
+|____ checkpoint	                # need download from [here](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip)
+|____ data		                # train/test/dev data
+|____ output			        # output (final model, predict results)
+|____ BERT_NER.py		        # mian code
+|____ conlleval.pl		        # eval code
+|____ run_ner.sh    		        # run model and eval result
+```
 
-`python BERT_NER.py --data_dir=data/ --bert_config_file=checkpoint/bert_config.json --init_checkpoint=checkpoint/bert_model.ckpt --vocab_file=vocab.txt --output_dir=./output/result_dir/`
+训练：
+
+`python BERT_NER.py --data_dir=data/ --bert_config_file=checkpoint/bert_config.json --init_checkpoint=checkpoint/bert_model.ckpt --vocab_file=checkpoint/vocab.txt --output_dir=output/result_dir/`
 
 ## 结果
 
